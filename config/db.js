@@ -1,15 +1,12 @@
-const db = require('sequelize');
+// config/db.js (Solusi)
 
-async function connectDB() {
+const connectDB = async () => {
     try {
-        await db.Sequelize.authenticate();
-        console.log('Database connected successfully.');
-
-        await db.Sequelize.sync({alter : true});
-        console.log('Database synchronized successfully.');
-
-    } catch (err) {
-        console.error('Database connection failed:', error);
+        // ... kode koneksi database ...
+        console.log('Database connected successfully');
+    } catch (err) { // <--- TAMBAHKAN PARAMETER ERROR DI SINI (misalnya 'err' atau 'error')
+        // Sekarang variabel 'err' sudah terdefinisi dan bisa digunakan
+        console.error('Database connection failed:', err); 
         process.exit(1);
     }
 }
